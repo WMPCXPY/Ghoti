@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Page</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/goo.fonts">
+    <link rel="stylesheet" href="../lib/buttons.css">
+    <link rel="shortcut icon" href="../style/ico/icon.png">
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style/form-elements.css">
+</head>
+
+<body>
+    <div class="top-content">
+        <div class="inner-bg">
+            <div class="container" id="index">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1 v-html="title">
+                      {{title}}
+                      </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3 v-html="ho">{{ho}}</h3>
+                                <p v-html="ht">{{ht}}</p>
+                                <p v-html="output">{{output}}</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-wheelchair-alt fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" v-on:input="inputing" name="form-username" placeholder="Username" class="form-username form-control" v-model="username">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" v-on:input="inputing" name="form-password" placeholder="Password" class="form-password form-control" v-model="password">
+                                </div>
+                                <button v-html="bt" type="button" v-bind:disabled="buttondis" v-on:click="login" class="button button-highlight bbtn button-rounded">{{bt}}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</body>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/quarticles.min.js"></script>
+<script src="../lib/vue.js"></script>
+<script src="../src/cowlevel.js"></script>
+<script src="../lib/jquery.backstretch.min.js"></script>
+<script src="../lib/bootstrap.min.js"></script>
+<script src="../src/cowlevelstyle.js"></script>
+<script src="../lib/md5.min.js"></script>
+
+</html>

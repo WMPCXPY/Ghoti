@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../lib/jquery.min.js"></script>
+
+    <title>TEST</title>
+</head>
+<style type="text/css">
+    .proSeriest {
+        height: 171px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .proSeriest .proSeriestbox {
+        width: 1060px;
+        margin: 15px auto;
+        padding-left: 60px;
+    }
+
+    .item {
+        width: 186px;
+        height: 136px;
+        margin-right: 78px;
+        overflow: hidden;
+        position: relative;
+        float: left;
+    }
+
+    .item .caption {
+        width: 186px;
+        height: 136px;
+        background: url(../style/img/backgrounds/gaming_poker_cards.jpg);
+        color: #fff;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        display: none;
+        /*background:#000000;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;*/
+    }
+
+    .item img {
+        border: 0;
+        position: absolute;
+    }
+</style>
+
+<script type="text/javascript">
+    /***需要调用JQUERY.js文件***/
+    $(document).ready(function() {
+        var move = -15;
+        var zoom = 50;
+        $('.item').hover(function() {
+            width = $('.item').width() * zoom;
+            height = $('.item').height() * zoom;
+            $(this).find('img').stop(false, true).animate({
+                'width': width,
+                'height': height,
+                'top': move,
+                'left': move
+            }, {
+                duration: 200
+            });
+            $(this).find('div.caption').stop(false, true).fadeIn(200);
+        }, function() {
+            $(this).find('img').stop(false, true).animate({
+                'width': $('.item').width(),
+                'height': $('.item').height(),
+                'top': '0',
+                'left': '0'
+            }, {
+                duration: 100
+            });
+            $(this).find('div.caption').stop(false, true).fadeOut(200);
+        });
+    });
+</script>
+
+<body>
+    <div class="proSeriest">
+        <div class="proSeriestbox" style="overflow:hidden;">
+            <div class="item">
+                <a href="#"><img src="../style/img/backgrounds/gaming_poker_cards.jpg" /></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
